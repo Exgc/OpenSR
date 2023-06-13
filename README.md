@@ -28,8 +28,6 @@ Then, clone this directory:
 ```
 git clone https://github.com/Exgc/OpenSR.git
 cd OpenSR
-git submodule init
-git submodule update
 ```
 
 Lastly, install Fairseq and the other packages:
@@ -42,7 +40,7 @@ pip install --editable ./
 ## Open-Modality Speech Recognition (OpenSR)
 
 ### 1. Data preparation
-Follow the steps in [`preparation`](avhubert/preparation/) to pre-process:
+Follow the steps in [`preparation`](opensr/preparation/) to pre-process:
 - LRS2 and LRS2-COMMON dataset
 
 ### 2. Audio-Visual Alignment Learning
