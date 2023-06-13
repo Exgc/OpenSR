@@ -28,8 +28,6 @@ Then, clone this directory:
 ```
 git clone https://github.com/Exgc/OpenSR.git
 cd OpenSR
-git submodule init
-git submodule update
 ```
 
 Lastly, install Fairseq and the other packages:
