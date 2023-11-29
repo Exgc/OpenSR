@@ -53,10 +53,8 @@ def main(args, sz='10'):
 
     valid_fids = set([f'main/{x.strip()}' for x in open(os.path.join(args.lrs2, 'val.txt')).readlines()])
     test_fids = set([f'main/{x.split()[0]}' for x in open(os.path.join(args.lrs2, 'test.txt')).readlines()])
-    preval_fids = set([f'short-pretrain/{x.strip()}' for x in open(os.path.join(args.lrs2, 'preval.txt')).readlines()])
     train_COMMON_fids = set([f'main/{x.strip()}' for x in open(os.path.join(args.lrs2, f'train_{sz}.txt')).readlines()])
-    # test_fids=set([])
-    # test_fids = set
+
     train_all, train_sub, pre_valid, valid, test = [], [], [], [], []
     train_COMMON = []
     for fid, label, nf_audio, nf_video in zip(fids, labels, nfs_audio, nfs_video):
@@ -72,10 +70,7 @@ def main(args, sz='10'):
                     train_COMMON.append([fid, label, nf_audio, nf_video])
                 train_sub.append([fid, label, nf_audio, nf_video])
         else:
-            if fid in preval_fids:
-                pre_valid.append([fid, label, nf_audio, nf_video])
-            else:
-                train_all.append([fid, label, nf_audio, nf_video])
+            train_all.append([fid, label, nf_audio, nf_video])
 
     dir_100 = f"{args.lrs2}/{sz}_data"
     print(f"Set up {sz} dir")
